@@ -1,8 +1,10 @@
 <template>
-<!--  <Count :init="3" @change="changeHandle" ref="countComponent"></Count>-->
-  <Count :init="3" @change="changeHandle" ref="countComponent"></Count>
+  <Count :init="3" @change="changeHandle" ref="countComponent" style="color:red">
+    <h1>code-uncle</h1>
+    <p>like code</p>
+  </Count>
   <br>
-{{changeHandle()}}
+  {{changeHandle()}}
 </template>
 
 <script>
@@ -14,22 +16,15 @@ export default {
     Count
   },
   setup() {
-    // let count = ref(0)
     //获取子组件
-    // const countComponent = ref()
     const countComponent =ref()
     onMounted(()=>{
       console.log(countComponent.value.num)
     })
 
-
-    // const changeHandle = ()=>countComponent.value?.num
     const changeHandle =()=>countComponent.value?.num
-    // return {changeHandle,countComponent}
-    return {changeHandle,countComponent}
-    // return {changeHandle}
 
+    return {changeHandle,countComponent}
   }
 }
 </script>
-
