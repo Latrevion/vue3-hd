@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.36/vue.global.js"></script>
+  <title>2</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script type="text/x-template" id="hdTemplate">
+<h2>baidu.com</h2>
+</script>
+
+<script>
+ const app = Vue.createApp({
+      template:'<div>根组件<company/></div>'
+  })
+ app.component('name',{
+   // template: '<h2>Luke</h2>'
+   template: '#hdTemplate'
+ })
+ app.component('company',{
+   template: '<div>company<name/></div>'
+ })
+
+
+ app.mount('#app')
+</script>
+</body>
+</html>

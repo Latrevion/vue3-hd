@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.36/vue.global.js"></script>
+  <title>13</title>
+</head>
+<body>
+<div id="app">
+<!--  <div @click="add">{{name}}</div>-->
+<!--  <div @[event]="add">{{name}}</div>-->
+<!--  <a href="https://www.baidu.com" @click.prevent="go($event,'baidu')">baidu.com</a>-->
+<!--  <br>-->
+  <button @click="del">-1</button>
+  {{num}}
+  <button @click="add">+1</button>
+  <div style="background-color:darkred;color: white " v-if="error">提示：{{error}}</div>
+</div>
+<script src="hd.js"></script>
+</body>
+</html>

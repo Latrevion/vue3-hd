@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.36/vue.global.js"></script>
+  <title>8</title>
+</head>
+<body>
+<!--<h1>vue3</h1>-->
+<div id="app">
+  <h2 v-for="lesson in lessons">{{lesson.title}}</h2>
+</div>
+<script>
+  window.lessons =[{title:'第1步'},{title:'第2步'}]
+</script>
+<script src="hd.js"></script>
+</body>
+</html>
