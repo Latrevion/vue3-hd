@@ -6,11 +6,12 @@
   </span>
   <button @click="add">+</button>
   <component :is="defaults[1]"></component>
+  {{sum}}
 </template>
 
 <script>
 //引入ref
-import {ref, watch, watchEffect} from "vue"
+import {ref, watch, watchEffect,computed} from "vue"
 
 export default {
   props: {
@@ -23,6 +24,9 @@ export default {
     const defaults = slots.default()
     //使得数据响应式
     let num = ref(props.init)
+
+    let sum =computed(()=>num.value+100)
+
     let add = () => {
       num.value++
       emit("change")
@@ -39,7 +43,7 @@ export default {
     expose({num})
     //让watchEffect失效
     // stop()
-    return {num, add, sub,attrs,defaults}
+    return {num, add, sub,attrs,defaults,sum}
   },
 }
 </script>

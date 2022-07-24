@@ -15,6 +15,7 @@ export default {
   components: {
     Count
   },
+  //setup是在beforecreate 和created之间运行的。当成created执行就行了。所以它是没有onbeforecreate 和 oncreated
   setup() {
     //获取子组件
     const countComponent =ref()
