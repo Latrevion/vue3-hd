@@ -6,26 +6,35 @@
   </span>
   <button @click="add">+</button>
   <component :is="defaults[1]"></component>
-  {{sum}}
+  {{ sum }}
+  <hr>
+  <button @click="updateUser('teacher')">
+    {{ user }}
+  </button>
 </template>
 
 <script>
 //引入ref
-import {ref, watch, watchEffect,computed} from "vue"
+import {ref, watch, watchEffect, computed, inject} from "vue"
 
 export default {
   props: {
     init: {type: Number, default: 3}
   },
   emits: ["change"],
-  inheritAttrs:false,
+  inheritAttrs: false,
   setup(props, context) {
-    const {emit, expose,attrs,slots} = context
+    //用inject接受数据，后面是默认值
+    const user = inject("user", "Hou-dun")
+    const updateUser = inject("updateUser")
+
+
+    const {emit, expose, attrs, slots} = context
     const defaults = slots.default()
     //使得数据响应式
     let num = ref(props.init)
 
-    let sum =computed(()=>num.value+100)
+    let sum = computed(() => num.value + 100)
 
     let add = () => {
       num.value++
@@ -43,7 +52,7 @@ export default {
     expose({num})
     //让watchEffect失效
     // stop()
-    return {num, add, sub,attrs,defaults,sum}
+    return {num, add, sub, attrs, defaults, sum, user, updateUser}
   },
 }
 </script>
