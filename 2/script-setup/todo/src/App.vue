@@ -14,7 +14,5 @@ import Todo from "./views/Todo.vue"
 </template>
 
 <style scoped>
-*{
-  color: #ffffff;
-}
+
 </style>

@@ -1,13 +1,9 @@
 <script setup>
 import {ref} from "vue"
+import Item from '../components/Item.vue'
 const todos = ref([])
 
-todos.value =await fetch('http://127.0.0.1:3003/news').then(r=>{
-    return r.json()
-    // return new Promise(resolve => {
-    //   setTimeout(()=>resolve(r.json()),2000)
-    // })
-})
+todos.value =await fetch('http://127.0.0.1:3003/news').then(r=>r.json())
 
 
 
@@ -15,12 +11,16 @@ todos.value =await fetch('http://127.0.0.1:3003/news').then(r=>{
 
 <template>
   <div>
-    {{ todos }}
+    <Item :todo="todo" class="item" v-for="todo in todos" :key="todo.id"></Item>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 div{
-  color: #ffffff;
+ display: flex;
+  flex-direction: column;
+  .item{
+    margin-bottom: 10px;
+  }
 }
 </style>
