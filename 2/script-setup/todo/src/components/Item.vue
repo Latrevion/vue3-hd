@@ -1,17 +1,26 @@
 <script setup>
 defineProps({
-  todo:{type:Object,required:true}
+  todo: {type: Object, required: true}
 })
 
 </script>
 
 <template>
-  <input type="text" :value="todo.title">
+
+    <div class="item">
+      <input type="text" :value="todo.title">
+      <button>删除</button>
+    </div>
+
 </template>
 
 
-<style scoped>
-input{
-  padding: 10px;
+<style  lang="scss">
+div.item {
+  display: flex;
+
+  input {
+    padding: 10px;
+  }
 }
 </style>
