@@ -1,5 +1,5 @@
 <script setup>
-import useTodo from "../composables/useTodo"
+import useTodo from "../composables/useTodo.js"
 const {del} =useTodo()
 const {todo}= defineProps({
   todo: {type: Object, required: true}
@@ -8,6 +8,7 @@ const {todo}= defineProps({
 
 <template>
   <div class="item">
+
     <input type="text" :value="todo.title">
     <button @click="del(todo.id)">删除</button>
   </div>
