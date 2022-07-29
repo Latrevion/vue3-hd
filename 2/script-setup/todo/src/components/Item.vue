@@ -22,5 +22,13 @@ div.item {
     padding: 10px;
     flex: 1;
   }
+
+  button{
+    margin-left: 10px;
+    background: #d35400;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+  }
 }
 </style>
