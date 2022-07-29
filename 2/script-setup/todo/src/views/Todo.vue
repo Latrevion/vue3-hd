@@ -1,12 +1,9 @@
 <script setup>
-import {ref} from "vue"
+
 import Item from '../components/Item.vue'
-import useRequest from "../composables/useRequest.js"
+import useTodo from "../composables/useTodo.js"
 
-const request= useRequest()
-const todos = ref([])
-
-todos.value =await request.get()
+const {todos} = await useTodo()
 
 const del = async ()=>{
   todos.value =await request.get()
