@@ -13,5 +13,10 @@ export default () => {
     await request.delete(id)
     load()
   }
-  return {todos, del,load}
+  const add = async todo =>{
+    await request.post(todo)
+    load()
+  }
+
+  return {todos, del,load,add}
 }

@@ -7,10 +7,10 @@ const {todo}= defineProps({
 </script>
 
 <template>
-    <div class="item">
-      <input type="text" :value="todo.title">
-      <button @click="del(todo.id)">删除</button>
-    </div>
+  <div class="item">
+    <input type="text" :value="todo.title">
+    <button @click="del(todo.id)">删除</button>
+  </div>
 </template>
 
 

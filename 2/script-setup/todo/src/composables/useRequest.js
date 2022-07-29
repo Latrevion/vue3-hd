@@ -7,5 +7,8 @@ export default ()=>({
   },
   async delete(url){
     return await this.request(url,{method:'delete'})
+  },
+  async post(data){
+    return await this.request('',{method: 'post',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
   }
 })
