@@ -1,24 +1,15 @@
 <script setup>
-import useRequest from "../composables/useRequest.js"
-const request = useRequest();
-
+import useTodo from "../composables/useTodo"
+const {del} =useTodo()
 const {todo}= defineProps({
   todo: {type: Object, required: true}
 })
-
-const emit=defineEmits(['del'])
-
-const del = async ()=>{
-  await request.delete(todo.id)
-  emit('del')
-}
-
 </script>
 
 <template>
     <div class="item">
       <input type="text" :value="todo.title">
-      <button @click="del">删除</button>
+      <button @click="del(todo.id)">删除</button>
     </div>
 </template>
 
