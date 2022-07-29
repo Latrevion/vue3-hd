@@ -1,15 +1,21 @@
 <script setup>
 import {ref} from "vue"
 import Item from '../components/Item.vue'
+import useRequest from "../composables/useRequest.js"
+
+const request= useRequest()
 const todos = ref([])
 
-todos.value =await fetch('http://127.0.0.1:3003/news').then(r=>r.json())
+todos.value =await request.get()
 
+const del = async ()=>{
+  todos.value =await request.get()
+}
 </script>
 
 <template>
   <div class="todo">
-    <Item :todo="todo" class="item" v-for="todo in todos" :key="todo.id"></Item>
+    <Item :todo="todo" @del="del" class="item" v-for="todo in todos" :key="todo.id"></Item>
   </div>
 </template>
 
