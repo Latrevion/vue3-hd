@@ -5,7 +5,7 @@ const show = ref(false)
 </script>
 
 <template>
-  <Hd v-if="show"></Hd>
+  <Hd v-if="show">保存提交</Hd>
   <button @click="show=!show">切换</button>
 </template>
 

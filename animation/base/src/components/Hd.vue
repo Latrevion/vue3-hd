@@ -3,7 +3,7 @@
 
 <template>
   <section>
-    <div>uncle</div>
+    <div><slot></slot></div>
   </section>
 </template>
 
@@ -16,9 +16,13 @@ div {
   background: #16a085;
   padding: 20px;
   animation: identifier 2s ease;
-  transition:2s;
+  transition:.5s;
+  border-radius: .5rem;
+  display: inline-block;
+  color: #ffffff;
+  cursor:pointer;
   &:hover{
-    transform: rotateY(360deg) rotateX(100deg) ;
+    background: #f39c12;
   }
 }
 
