@@ -2,9 +2,8 @@
 import useTodo from "../composables/useTodo.js"
 
 const {orderBy} = useTodo()
-
 const order = () => {
-  orderBy.value = orderBy.value ==='asc'?'desc':'asc'
+  orderBy.value = orderBy.value === "asc" ? "desc" : "asc"
 }
 </script>
 
@@ -15,7 +14,6 @@ const order = () => {
     </button>
   </div>
 </template>
-
 
 <style lang='scss'>
 .sort {

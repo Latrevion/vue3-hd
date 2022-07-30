@@ -1,5 +1,6 @@
 <script setup>
 import useTodo from "../composables/useTodo.js"
+
 const {del} =useTodo()
 const {todo}= defineProps({
   todo: {type: Object, required: true}
