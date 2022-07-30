@@ -14,8 +14,8 @@ const show = ref(false)
 <!--  </transition>-->
 
   <transition
-  enter-active-class="hd-enter"
-  leave-active-class="hd-leave"
+  enter-active-class="animate__animated animate__flip"
+  leave-active-class="animate__animated  animate__rotateOut"
   >
     <Xj v-if="show">uncle2</Xj>
   </transition>
