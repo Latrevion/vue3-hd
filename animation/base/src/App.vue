@@ -13,7 +13,10 @@ const show = ref(false)
 <!--    <Trans v-if="show">uncle1</Trans>-->
 <!--  </transition>-->
 
-  <transition name="xj">
+  <transition
+  enter-active-class="hd-enter"
+  leave-active-class="hd-leave"
+  >
     <Xj v-if="show">uncle2</Xj>
   </transition>
 
@@ -37,11 +40,11 @@ const show = ref(false)
 // transform: rotateX(360deg);
 //}
 
-.xj-enter-active {
+.hd-enter{
   animation: identifier 2s ease ;
 }
 
-.xj-leave-active{
+.hd-leave{
   animation: identifier 2s ease reverse ;
 }
 
