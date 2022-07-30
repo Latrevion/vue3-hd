@@ -16,29 +16,12 @@ const show = ref(false)
 </template>
 
 <style lang="scss" scoped>
-.v-enter-from{
+.v-enter-from,.v-leave-to{
   opacity: 0;
 
 }
-.v-enter-active{
+.v-enter-active,.v-leave-active{
   transition:2s ease;
-}
-
-.v-enter-to{
-  opacity: 1;
-}
-
-.v-leave-from{
-  opacity: 1;
-}
-
-.v-leave-active{
-  transition:3s ease;
-}
-
-.v-leave-to{
-  opacity: 0;
-  transform: translateY(-200px);
 }
 
 button {
