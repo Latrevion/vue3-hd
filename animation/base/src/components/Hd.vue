@@ -25,7 +25,6 @@ div {
     background: #f39c12;
   }
 }
-
 @keyframes identifier {
   from {
     transform: translateX(-5px);
@@ -47,6 +46,4 @@ div {
     transform: translateX(-5px);
   }
 }
-
-
 </style>
