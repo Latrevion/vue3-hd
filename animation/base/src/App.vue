@@ -4,7 +4,7 @@ import {ref} from "vue"
 import Xj from "./components/Xj.vue"
 import Trans from "./components/Trans.vue"
 
-const show = ref(false)
+const show = ref(true)
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const show = ref(false)
 <!--    <Trans v-if="show">uncle1</Trans>-->
 <!--  </transition>-->
 
-  <transition
+  <transition appear
   enter-active-class="animate__animated animate__flip"
   leave-active-class="animate__animated  animate__rotateOut"
   >
