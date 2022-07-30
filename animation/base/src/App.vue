@@ -9,9 +9,9 @@ const show = ref(false)
 
 <template>
   <!--  <Hd v-if="show">保存提交</Hd>-->
-  <transition name="trans">
-    <Trans v-if="show">uncle1</Trans>
-  </transition>
+<!--  <transition name="trans">-->
+<!--    <Trans v-if="show">uncle1</Trans>-->
+<!--  </transition>-->
 
   <transition name="xj">
     <Xj v-if="show">uncle2</Xj>
@@ -21,25 +21,42 @@ const show = ref(false)
 </template>
 
 <style lang="scss" scoped>
-.trans-enter-from,
-.trans-leave-to {
-  opacity: 0;
-}
+//.trans-enter-from,
+//.trans-leave-to {
+//  opacity: 0;
+//}
 
 .trans-enter-active,
-.trans-leave-active {
-  transition: 2s ease;
+.trans-leave-active
+{
+  transition: .6s ease;
 }
 
-.xj-enter-from,
-.xj-leave-to {
- transform: rotateX(360deg);
+//.xj-enter-from,
+//.xj-leave-to {
+// transform: rotateX(360deg);
+//}
+
+.xj-enter-active {
+  animation: identifier 2s ease ;
 }
 
-.xj-enter-active,
-.xj-leave-active {
-  transition: 2s ease;
+.xj-leave-active{
+  animation: identifier 2s ease reverse ;
 }
+
+@keyframes identifier {
+  from{
+    transform:scale(0);
+  }
+
+  to{
+    from{
+      transform:scale(1) rotateX(360deg);
+    }
+  }
+}
+
 
 button {
   display: block;
