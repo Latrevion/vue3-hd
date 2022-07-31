@@ -6,15 +6,25 @@ import Trans from "./components/Trans.vue"
 const show = ref(true)
 
 const beforeEnter = (el)=>{
- console.log('beforeenter')
+  gsap.set(el, {
+    opacity:0
+  })
 }
 
-const enter =()=>{
-  console.log('enter')
+const enter =(el,done)=>{
+  gsap.to(el, {
+    opacity:1,
+    duration:2,
+    onComplete:done
+  })
 }
 
-const leave=()=>{
-  console.log('leave')
+const leave=(el,done)=>{
+  gsap.to(el, {
+    opacity:0,
+    duration:2,
+    onComplete:done
+  })
 }
 </script>
 
