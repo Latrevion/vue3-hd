@@ -1,10 +1,10 @@
 <script setup>
-import Item from '../components/Item.vue'
+import Item from "../components/Item.vue"
 import useTodo from "../composables/useTodo.js"
-import Add from '../components/Add.vue'
-import Sort from '../components/Sort.vue'
+import Add from "../components/Add.vue"
+import Sort from "../components/Sort.vue"
 
-const {todos,load} = useTodo()
+const {todos, load} = useTodo()
 load()
 </script>
 
@@ -14,23 +14,38 @@ load()
     <Sort></Sort>
   </div>
   <div class="todo">
-    <Item :todo="todo" class="item" v-for="todo in todos" :key="todo.id"></Item>
+    <transition-group name="todo">
+      <Item :todo="todo" class="item" v-for="todo in todos" :key="todo.id"></Item>
+    </transition-group>
   </div>
 </template>
 
 <style lang="scss">
-.form{
+.todo-leave-to{
+  opacity: 0;
+  transform: scale(0);
+}
+
+.todo-leave-active{
+  transition:1s ease;
+}
+
+
+
+.form {
   display: flex;
   margin-bottom: 20px;
-  .add{
+
+  .add {
     flex: 1;
   }
 }
 
-div.todo{
- display: flex;
+div.todo {
+  display: flex;
   flex-direction: column;
-  .item{
+
+  .item {
     margin-bottom: 10px;
   }
 }
