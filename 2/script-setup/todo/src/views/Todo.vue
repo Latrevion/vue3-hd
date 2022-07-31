@@ -25,12 +25,16 @@ load()
   opacity: 0;
   transform: scale(0);
 }
-
+//控制消失元素的动画效果
 .todo-leave-active{
   transition:1s ease;
+  //脱离文档流
+  position: absolute;
 }
-
-
+//控制后面元素的动画效果
+.todo-move{
+  transition:all 1s ease;
+}
 
 .form {
   display: flex;
@@ -44,9 +48,11 @@ load()
 div.todo {
   display: flex;
   flex-direction: column;
-
+  position: relative;
   .item {
     margin-bottom: 10px;
+    //position: absolute;
+    width: 100%;
   }
 }
 </style>
