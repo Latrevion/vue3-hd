@@ -3,9 +3,26 @@ import Item from "../components/Item.vue"
 import useTodo from "../composables/useTodo.js"
 import Add from "../components/Add.vue"
 import Sort from "../components/Sort.vue"
+import gsap from 'gsap'
 
-const {todos, load} = useTodo()
+const {todos, load}                                                  = useTodo()
 load()
+
+
+const beforeEnter =(el)=>{
+gsap.set(el,{
+  opacity:0
+})
+}
+
+const enter =(el,done)=>{
+  gsap.to(el, {
+    opacity:1,
+    duration:.6,
+    //陆续加载
+    delay:el.dataset.index*0.3
+  })
+}
 </script>
 
 <template>
@@ -14,8 +31,8 @@ load()
     <Sort></Sort>
   </div>
   <div class="todo">
-    <transition-group name="todo">
-      <Item :todo="todo" class="item" v-for="todo in todos" :key="todo.id"></Item>
+    <transition-group appear name="todo" @before-enter="beforeEnter" @enter="enter">
+      <Item :todo="todo" class="item" v-for="(todo,index) in todos" :data-index="index" :key="todo.id"></Item>
     </transition-group>
   </div>
 </template>
