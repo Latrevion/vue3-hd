@@ -3,8 +3,19 @@ import {ref} from "vue"
 // import Hd from "./components/Hd.vue"
 import Xj from "./components/Xj.vue"
 import Trans from "./components/Trans.vue"
-
 const show = ref(true)
+
+const beforeEnter = (el)=>{
+ console.log('beforeenter')
+}
+
+const enter =()=>{
+  console.log('enter')
+}
+
+const leave=()=>{
+  console.log('leave')
+}
 </script>
 
 <template>
@@ -13,10 +24,8 @@ const show = ref(true)
 <!--    <Trans v-if="show">uncle1</Trans>-->
 <!--  </transition>-->
 
-  <transition appear
-  enter-active-class="animate__animated animate__flip"
-  leave-active-class="animate__animated  animate__rotateOut"
-  >
+<!--  beforeEnter enter afterEnter beforeLeave leave afterLeave-->
+  <transition @before-enter="beforeEnter" @enter="enter" @leave="leave">
     <Xj v-if="show">uncle2</Xj>
   </transition>
 
