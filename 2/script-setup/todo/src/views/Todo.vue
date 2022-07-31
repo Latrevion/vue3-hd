@@ -16,7 +16,8 @@ load()
     <Sort></Sort>
   </div>
   <div class="todo">
-    <AnimateList>
+<!--    组件封装好后 不需要关心组件的实现 只需要设置传递几个参数 tag="ul" duration="10" delay="5"-->
+    <AnimateList tag="ul" duration="1" delay=".5">
       <Item :todo="todo" class="item" v-for="(todo,index) in todos" :data-index="index" :key="todo.id"></Item>
     </AnimateList>
   </div>

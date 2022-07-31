@@ -1,5 +1,12 @@
 <script setup>
 import gsap from "gsap"
+const prop = defineProps(
+    {
+      duration:{default:0.6},
+      delay:{default:0.2},
+      tag:{default:null}
+    }
+)
 
 const beforeEnter = (el) => {
   gsap.set(el, {
@@ -10,15 +17,15 @@ const beforeEnter = (el) => {
 const enter = (el, done) => {
   gsap.to(el, {
     opacity: 1,
-    duration: .6,
+    duration: prop.duration,
     //陆续加载
-    delay: el.dataset.index * 0.3
+    delay: el.dataset.index * prop.delay
   })
 }
 </script>
 
 <template>
-  <transition-group appear name="todo" @before-enter="beforeEnter" @enter="enter">
+  <transition-group :tag="tag" appear name="todo" @before-enter="beforeEnter" @enter="enter">
     <slot></slot>
   </transition-group>
 </template>
