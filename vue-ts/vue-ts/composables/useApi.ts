@@ -1,12 +1,12 @@
 import {ref} from 'vue';
 
-export default async url => {
-  const response = ref();
+export default async (url:RequestInfo,options:RequestInit)=> {
+  const response = ref<{title?:string;id?:number}>({});
 
   const request = async () => {
-    const result = await fetch(url).then(r => r.json());
-    response.value = result;
-  };
+    response.value = await fetch(url,options).then(r => r.json())
+
+  }
 
   return {response, request};
 }
