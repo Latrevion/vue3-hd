@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {ref} from 'vue';
-
-const res = await fetch('http://127.0.0.1:3003/posts').then(r => r.json());
-const article = ref<{ title: string }>(res);
-
-const state = ref(false);
+// import {ref} from 'vue';
+//
+// const res = await fetch('http://127.0.0.1:3003/posts').then(r => r.json());
+// const article = ref<{ title: string }>(res);
+//
+// const state = ref(false);
 
 // const data = await fetch('http://127.0.0.1:3003/posts/1').then(r =>r.json())
 // const post = ref(data)
@@ -15,10 +15,10 @@ const state = ref(false);
 </script>
 
 <template>
-  <button @click="state =!state">button</button>
-  <div v-if="state">
-    {{ article.title}}
-  </div>
+<!--  <button @click="state =!state">button</button>-->
+<!--  <div v-if="state">-->
+<!--    {{ article.title}}-->
+<!--  </div>-->
 </template>
 
 
