@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import useApi from '../../composables/useApi';
+const {response} = await useApi(`http://127.0.0.1:3003/posts`)
 // import {ref} from 'vue';
 //
 // const res = await fetch('http://127.0.0.1:3003/posts').then(r => r.json());
@@ -15,10 +17,11 @@
 </script>
 
 <template>
-<!--  <button @click="state =!state">button</button>-->
-<!--  <div v-if="state">-->
-<!--    {{ article.title}}-->
-<!--  </div>-->
+  {{ response }}
+  <!--  <button @click="state =!state">button</button>-->
+  <!--  <div v-if="state">-->
+  <!--    {{ article.title}}-->
+  <!--  </div>-->
 </template>
 
 
