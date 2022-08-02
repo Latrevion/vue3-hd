@@ -1,17 +1,23 @@
 {
-  "posts": {
+  "articles": [
+    {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "baidu",
+      "author": "abc"
+    },
+    {
+      "id": 1,
+      "title": "用户代理样式表",
+      "author": "张三"
     }
-  ,
-  "comments":
+  ],
+  "comments": [
     {
       "id": 1,
       "body": "some comment",
       "postId": 1
     }
-  ,
+  ],
   "profile": {
     "name": "typicode"
   }
